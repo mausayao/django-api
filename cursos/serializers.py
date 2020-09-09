@@ -4,30 +4,34 @@ from cursos.models import Curso, Avaliacao
 
 
 class AvaliacaoSerializer(serializers.ModelSerializer):
-    extra_kwargs = {
-        'email': {'write_only': True}
-    }
 
-    model = Avaliacao
+    class Meta:
+        extra_kwargs = {
+            'email': {'write_only': True}
+        }
 
-    fields = (
-        'id',
-        'curso',
-        'nome',
-        'email',
-        'comentario',
-        'avaliacao',
-        'criacao',
-        'ativo'
-    )
+        model = Avaliacao
+
+        fields = (
+            'id',
+            'curso',
+            'nome',
+            'email',
+            'comentario',
+            'avaliacao',
+            'criacao',
+            'ativo',
+        )
 
 
 class CursoSerializer(serializers.ModelSerializer):
-    model = Curso
-    fields = (
-        'id',
-        'titulo',
-        'url',
-        'criacao',
-        'ativo'
-    )
+
+    class Meta:
+        model = Curso
+        fields = (
+            'id',
+            'titulo',
+            'url',
+            'criacao',
+            'ativo',
+        )
