@@ -70,10 +70,10 @@ class CursoViewSet(viewsets.ModelViewSet):
 
 class AvaliacaoViewSet(
     mixins.CreateModelMixin,
-    mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin,
     mixins.DestroyModelMixin,
+    mixins.ListModelMixin,
     viewsets.GenericViewSet):
 
     queryset = Avaliacao.objects.all()
