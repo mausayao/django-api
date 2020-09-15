@@ -1,4 +1,3 @@
-from unicodedata import name
 from django.db import router
 from django.urls import path
 
@@ -15,10 +14,11 @@ from cursos.views import (
 
 router = SimpleRouter()
 
-
+# Api v2
 router.register('cursos', CursoViewSet)
 router.register('avaliacoes', AvaliacaoViewSet)
 
+# Api v1
 urlpatterns = [
     path('cursos/', CursosAPIView.as_view(), name='cursos'),
     path('cursos/<int:pk>/', CursoAPIView.as_view(), name='curso'),
